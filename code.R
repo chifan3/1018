@@ -4,32 +4,8 @@ rm(list = ls())
 library(msigdbr)
 all_gene_sets<-msigdbr(species = "Homo sapiens")
 all_gene_sets<-as.data.frame(all_gene_sets)
-Hallmarker_gene_set<-all_gene_sets[which(all_gene_sets$gs_cat=="C2"),]
-H <- c("IVANOVA_HEMATOPOIESIS_STEM_CELL",
-       "IVANOVA_HEMATOPOIESIS_STEM_CELL_LONG_TERM",
-       "BENPORATH_ES_1",
-       "BHATTACHARYA_EMBRYONIC_STEM_CELL",
-       "WONG_EMBRYONIC_STEM_CELL_CORE",
-       "BENPORATH_OCT4_TARGETS",
-       "BENPORATH_NANOG_TARGETS",
-       "BENPORATH_SOX2_TARGETS",
-       "RAMALHO_STEMNESS_UP",
-       "IVANOVA_HEMATOPOIESIS_EARLY_PROGENITOR",
-       "KEGG_CYSTEINE_AND_METHIONINE_METABOLISM",
-       "KEGG_VALINE_LEUCINE_AND_ISOLEUCINE_BIOSYNTHESIS",
-       "KEGG_VALINE_LEUCINE_AND_ISOLEUCINE_DEGRADATION",
-      "KEGG_LYSINE_DEGRADATION",
-       "JAATINEN_HEMATOPOIETIC_STEM_CELL_UP",
-       "IVANOVA_HEMATOPOIESIS_STEM_CELL_AND_PROGENITOR",
-       "KEGG_ALANINE_ASPARTATE_AND_GLUTAMATE_METABOLISM",
-       "IVANOVA_HEMATOPOIESIS_INTERMEDIATE_PROGENITOR",
-       "KEGG_HISTIDINE_METABOLISM",
-       "KEGG_TRYPTOPHAN_METABOLISM",
-       "KEGG_BETA_ALANINE_METABOLISM",
-       "KEGG_ARGININE_AND_PROLINE_METABOLISM",
-       "KEGG_GLYCINE_SERINE_AND_THREONINE_METABOLISM",
-       "KEGG_TYROSINE_METABOLISM",
-       "KEGG_PHENYLALANINE_METABOLISM")
+Hallmarker_gene_set<-all_gene_sets[which(all_gene_sets$gs_cat==""),]
+H <- c()
 
 Hallmarker_gene_set<-Hallmarker_gene_set[which(Hallmarker_gene_set$gs_name %in% H),]
 length(table(Hallmarker_gene_set$gs_name))
